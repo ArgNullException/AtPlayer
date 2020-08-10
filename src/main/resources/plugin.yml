@@ -1,0 +1,18 @@
+name: AtPlayer
+version: 1.0
+api-version: 1.16
+author: NullExceptionArg
+main: org.github.nullexceptionarg.atplayer.AtPlayer
+
+commands:
+  ap:
+    description: Allows you to use @Player's commands.
+    usage: /ap <command>
+    permission: atplayer.info
+
+permissions:
+  atplayer.toggle:
+    description: Allows you to toggle the sound notification when you get pinged.
+  atplayer.info:
+    description: Allows you to open @Player's menu with all of the available commands.
+    default: true
