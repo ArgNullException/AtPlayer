@@ -10,15 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="048cb08e-670e-4653-80a5-f30b82b404da" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/AtPlayer.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/AtPlayer.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/AtPlayer.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/github/nullexceptionarg/atplayer/listener/ChatListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/github/nullexceptionarg/atplayer/listener/ChatListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +68,7 @@
       <workItem from="1596618614498" duration="489000" />
       <workItem from="1596659035649" duration="2738000" />
       <workItem from="1621286868031" duration="8147000" />
-      <workItem from="1621350207010" duration="2328000" />
+      <workItem from="1621350207010" duration="4328000" />
     </task>
     <servers />
   </component>

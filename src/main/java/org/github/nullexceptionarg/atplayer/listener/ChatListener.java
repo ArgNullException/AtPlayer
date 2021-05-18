@@ -23,7 +23,6 @@ import java.util.stream.Collectors;
 public class ChatListener implements Listener {
     private AtPlayer instance;
     private FileConfiguration cfg;
-    private static Map<String,Set<UUID>> fakeEvents = new HashMap<>();
 
     public ChatListener(AtPlayer main){
         instance = main;
@@ -32,39 +31,19 @@ public class ChatListener implements Listener {
     @EventHandler
     public void onChatPing(AsyncPlayerChatEvent event) {
         String message = event.getMessage();
-        if(fakeEvents.containsKey(message))
-        {
-            for(UUID p : fakeEvents.get(message)){
-                event.getRecipients().remove(Bukkit.getPlayer(p));
-            }
-            fakeEvents.remove(message);
-            return;
-        }
 
         List<UUID> concernedPlayers = Bukkit.getOnlinePlayers().stream().filter(x -> message.contains(x.getName())).map(Entity::getUniqueId).collect(Collectors.toList());
         if(concernedPlayers.size() == 0)
             return;
 
         cfg = instance.getConfig();
-        List<Player> players = new ArrayList<>(event.getRecipients());
-        for (Player p : players) {
-            if(!concernedPlayers.contains(p.getUniqueId())){
-                event.getRecipients().remove(p);
-            }else{
-                if(cfg.getBoolean(p.getUniqueId().toString(),true))
-                    p.playSound(p.getLocation(), Sound.BLOCK_NOTE_BLOCK_PLING, 10, 1);
-                event.setMessage(event.getMessage().replaceAll(p.getName(), ChatColor.AQUA + "@" + p.getName() + ChatColor.RESET ));
-            }
+        for (UUID p : concernedPlayers) {
+            Player ply = Bukkit.getPlayer(p);
+                if(cfg.getBoolean(p.toString(),true)){
+                    ply.playSound(ply.getLocation(), Sound.BLOCK_NOTE_BLOCK_PLING, 10, 1);
+                }
+                event.setMessage(event.getMessage().replaceAll(ply.getName(), ChatColor.AQUA + "@" + ply.getName() + ChatColor.RESET ));
         }
-
-        fakeEvents.put(message,new HashSet<>(concernedPlayers));
-
-        Bukkit.getScheduler().scheduleSyncDelayedTask(instance, new Runnable() {
-            @Override
-            public void run() {
-                event.getPlayer().chat(message);
-            }
-        },0);
     }
 
 }
